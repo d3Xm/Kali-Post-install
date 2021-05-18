@@ -21,7 +21,7 @@ echo 'downloading share script'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/mount.sh | sh
 echo '/usr/bin/vmhgfs-fuse .host:/ /home/kali/shares -o subtype=vmhgfs-fuse,allow_other' >> /etc/profile
 echo 'PATH=$PATH:/home/kali/shares/virtualshares/sharedbins/' >> /etc/profile
-echo 'setting a non-horrible PS1 for bash'
+echo 'setting a PS1 for bash that dosnt make me want to claw my eyes out'
 echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\e[31;1m\]> \[\e[0m\]"' >> /root/.bashrc
 echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\e[31;1m\]> \[\e[0m\]"' >> /home/kali/.bashrc
 echo 'downloading tmux conf'
