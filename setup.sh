@@ -2,7 +2,7 @@
 HOSTNAME=d3Xm
 TIMEZONE='Europe/Stockholm'
 HOME=/home/kali/
-GITROB_ACCESS_TOKEN=  # Add your Github API token here
+GITHUBTOKEN=  # Add your Github API token here
 
 cd /home/kali
 
@@ -162,6 +162,8 @@ printf '[+] Installing Bettercap\n'
 printf '============================================================\n\n'
 apt-get -y install libnetfilter-queue-dev libpcap-dev libusb-1.0-0-dev
 go get -v github.com/bettercap/bettercap
+go build $HOME/go/src/github.com/bettercap/bettercap
+ln -s $HOME/go/bin/bettercap /usr/local/bin/bettercap
 
 printf '\n============================================================\n'
 printf '[+] Installing CrackMapExec\n'
@@ -213,16 +215,14 @@ cd && ln -s /opt/eavesarp/eavesarp.py /usr/local/bin/eavesarp
 printf '\n============================================================\n'
 printf '[+] Installing Gitrob\n'
 printf '============================================================\n\n'
-cd /opt
-go get github.com/michenriksen/gitrob
-echo 'export GITROB_ACCESS_TOKEN=' >> ~/bashrc
+go get -v github.com/michenriksen/gitrob
+echo -e 'export GITROB_ACCESS_TOKEN='$GITHUBTOKEN'' >> $HOME/.bashrc
+go build $HOME/go/src/github.com/michenriksen/gitrob
 
 printf '\n============================================================\n'
 printf '[+] Installing Gobuster\n'
 printf '============================================================\n\n'
-cd /opt
-go get github.com/OJ/gobuster
-
+apt-get install gobuster
 
 printf '\n============================================================\n'
 printf '[+] Installing King-Phisher\n'
@@ -266,7 +266,9 @@ cd /opt
 printf '\n============================================================\n'
 printf '[+] Installing Ruler\n'
 printf '============================================================\n\n'
-go get github.com/sensepost/ruler
+go get -v github.com/sensepost/ruler
+go build $HOME/go/src/github.com/sensepost/ruler
+ln -s $HOME/go/src/github.com/sensepost/ruler/ruler /usr/local/bin/ruler
 
 printf '\n============================================================\n'
 printf '[+] Installing WPscan\n'
