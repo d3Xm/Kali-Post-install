@@ -1,6 +1,7 @@
 #!/bin/bash
 HOSTNAME=d3Xm
 TIMEZONE='Europe/Stockholm'
+HOME=/home/kali/
 
 cd /home/kali
 
@@ -143,13 +144,13 @@ printf '[+] Installing Go lang\n'
 printf '============================================================\n\n'
 ## Go lang install and add /home/go/bin to path
 apt-get install -y golang
-echo 'export GOROOT=/usr/lib/go' >> ~/.bashrc
-echo 'export GOPATH=$HOME/go' >> ~/.bashrc
-echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
+echo 'export GOROOT=/usr/lib/go' >> /home/kali/.bashrc
+echo 'export GOPATH=$HOME/go' >> /home/kali/.bashrc
+echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> /home/kali/.bashrc
 
 
 printf '\n============================================================\n'
-printf '[+] Installing bloodhound.py\n'
+printf '[+] Installing Bloodhound.py\n'
 printf '============================================================\n\n'
 apt-get install -y neo4j bloodhound
     ##Neo4j - change password
@@ -173,6 +174,14 @@ cd CrackMapExec && python3 -m pipenv install
 python3 -m pipenv run python setup.py install
 ln -s ~/.local/share/virtualenvs/$(ls /home/kali/.local/share/virtualenvs | grep CrackMapExec | head -n 1)/bin/cme ~/usr/local/bin/cme
 apt-get install -y crackmapexec
+
+
+printf '\n============================================================\n'
+printf '[+] Installing Dictator\n'
+printf '============================================================\n\n'
+go get -v github.com/0bs3ssi0n/Dictator
+ln -s /home/kali/go/bin/Dictator /usr/local/bin/Dictator
+
 
 
 printf '\n============================================================\n'
@@ -294,6 +303,7 @@ printf '[+] Installing Docker\n'
 printf '============================================================\n\n'
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' | tee /etc/apt/sources.list.d/docker.list
+apt-get update
 apt remove docker docker-engine docker.io
 apt-get install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
