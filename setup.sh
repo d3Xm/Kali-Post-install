@@ -1,4 +1,6 @@
 #!/bin/bash
+HOSTNAME=d3Xm
+TIMEZONE='Europe/Stockholm'
 
 cd /home/kali
 
@@ -6,12 +8,12 @@ printf '\n============================================================\n'
 printf '[+] Setting up host specific details\n'
 printf '============================================================\n\n'
 echo 'setting up hostname'
-echo 'd3Xm' > /etc/hostname
+echo $HOSTNAME > /etc/hostname
 sed -i 's/kali/d3Xm/g' /etc/hosts
 echo 'changing default shell'
 chsh --shell /bin/bash kali
 chsh --shell /bin/bash root
-echo 'making share directory'
+echo 'creating share directory'
 mkdir /home/kali/shares
 echo 'downloading share script'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/mount.sh | sh
@@ -28,7 +30,8 @@ echo 'increasing history'
 sed -i 's/HistoryLimitedTo=1000/HistoryLimitedTo=100000/g' /home/kali/.config/qterminal.org/qterminal.ini
 echo 'back to the beutiful darkness of a real terminal...'
 sed -i 's/colorScheme=Kali-Dark/colorScheme=Linux/g' /home/kali/.config/qterminal.org/qterminal.ini
-
+echo 'hush kali devs'
+touch ~/.hushlogin
 
 
 
@@ -91,7 +94,7 @@ printf '[+] Adjusting timezone\n'
 printf '============================================================\n\n'
 #ls -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 #dpkg-reconfigure -f noninteractive tzdata
-timedatectl set-timezone Europe/Stockholm 
+timedatectl set-timezone $TIMEZONE
 
 printf '\n============================================================\n'
 printf '[+] Lowering volume\n'
@@ -288,8 +291,9 @@ sudo systemctl enable containerd
 curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-
-
+printf '\n============================================================\n'
+printf '[+] Now reboot the machine so that all changes are applied\n'
+printf '============================================================\n\n'
 
 
 
