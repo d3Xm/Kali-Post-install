@@ -2,6 +2,7 @@
 HOSTNAME=d3Xm
 TIMEZONE='Europe/Stockholm'
 HOME=/home/kali/
+GITROB_ACCESS_TOKEN=  # Add your Github API token here
 
 cd /home/kali
 
