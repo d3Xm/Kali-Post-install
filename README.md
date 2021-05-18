@@ -25,6 +25,7 @@ Disables Auto-Lock / Sleep<br />
 
 Creates:<br />
 /home/kali/shares  and sets a bashrc script to enable it for vmware shares<br />
+/home/kali/shares/virtualshares/sharedbins in $PATH <br />
 
 Installs:<br />
 Go Lang<br />
