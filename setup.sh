@@ -212,6 +212,12 @@ cd eavesarp && python3 -m pip install -r requirements.txt
 cd && ln -s /opt/eavesarp/eavesarp.py /usr/local/bin/eavesarp
 
 printf '\n============================================================\n'
+printf '[+] Installing fuff\n'
+printf '============================================================\n\n'
+go get -v -u github.com/ffuf/ffuf
+
+
+printf '\n============================================================\n'
 printf '[+] Installing Gitrob\n'
 printf '============================================================\n\n'
 go get -v github.com/michenriksen/gitrob
@@ -229,6 +235,8 @@ printf '============================================================\n\n'
 cd /tmp
 wget -q https://github.com/securestate/king-phisher/raw/master/tools/install.sh && \
 bash ./install.sh
+sudo ln -s /opt/king-phisher/KingPhisher /usr/local/bin/ 
+
 
 printf '\n============================================================\n'
 printf '[+] Initializing Metasploit Database\n'
@@ -241,10 +249,11 @@ printf '\n============================================================\n'
 printf '[+] Installing PCredz\n'
 printf '============================================================\n\n'
 apt-get remove -y python-pypcap
-apt-get install -y python-libpcap
+pip3 install libpcap python-libpcap 
 cd /opt
 git clone https://github.com/lgandx/PCredz.git
 ln -s /opt/PCredz/Pcredz /usr/local/bin/pcredz
+
 
 printf '\n============================================================\n'
 printf '[+] Installing Reconbot\n'
@@ -264,7 +273,7 @@ sudo apt-get install -y libgmp3-dev libmpc-dev
 cd RsaCtfTool
 pip3 install -r "requirements.txt"
 python3 RsaCtfTool.py
-cd /opt
+ln -s /opt/RsaCtfTool/RsaCtfTool.py /usr/local/bin/
 
 printf '\n============================================================\n'
 printf '[+] Installing Ruler\n'
@@ -285,12 +294,7 @@ printf '     - LibreOffice\n'
 printf '     - Remmina\n'
 printf '     - file explorer SMB capability\n'
 printf '============================================================\n\n'
-apt-get install -y \
-	gnome-screenshot \
-    libreoffice \
-    remmina \
-    gvfs-backends \ 
-    sshpass
+apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass
 
 
 printf '\n============================================================\n'
