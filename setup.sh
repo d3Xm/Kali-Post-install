@@ -256,6 +256,14 @@ cd /opt
 git clone https://github.com/lgandx/PCredz.git
 ln -s /opt/PCredz/Pcredz /usr/local/bin/pcredz
 
+printf '\n============================================================\n'
+printf '[+] Installing Phishing Templates\n'
+printf '============================================================\n\n'
+cd /opt
+git clone https://github.com/bLackCat-79/PhishingTemplates.git
+chown -R kali:kali PhishingTemplates/
+
+
 
 printf '\n============================================================\n'
 printf '[+] Installing Reconbot\n'
