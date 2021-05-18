@@ -231,6 +231,17 @@ git clone https://github.com/lgandx/PCredz.git
 ln -s /opt/PCredz/Pcredz /usr/local/bin/pcredz
 
 printf '\n============================================================\n'
+printf '[+] Installing Reconbot\n'
+printf '============================================================\n\n'
+cd /opt
+git clone https://github.com/0bs3ssi0n/Reconbot.git
+cd Reconbot
+chmod +x reconbot
+ln -s /opt/Reconbot/reconbot /usr/bin/reconbot
+
+
+
+printf '\n============================================================\n'
 printf '[+] Installing RsaCTFool\n'
 printf '============================================================\n\n'
 cd /opt
