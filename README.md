@@ -32,6 +32,7 @@ CrackMapExec<br />
 Dictator<br />
 EAP Hammer<br />
 EavesARP<br />
+Evil-WinRM<br />
 Gitrob<br />
 Gobuster<br />
 King-Phisher<br />
