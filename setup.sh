@@ -285,7 +285,8 @@ apt-get install -y \
 	gnome-screenshot \
     libreoffice \
     remmina \
-    gvfs-backends \ # smb in file explorer\
+    gvfs-backends \ 
+    sshpass
 
 
 printf '\n============================================================\n'
