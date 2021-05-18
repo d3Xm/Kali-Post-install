@@ -26,7 +26,7 @@ echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\
 echo 'downloading tmux conf'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
 echo 'gettin rid of transparency..'
-sed -i 's/ApplicationTransparency=20/ApplicationTransparency=0/g' /home/kali/.config/qterminal.org/qterminal.ini
+sed -i 's/ApplicationTransparency=5/ApplicationTransparency=0/g' /home/kali/.config/qterminal.org/qterminal.ini
 echo 'increasing history'
 sed -i 's/HistoryLimitedTo=1000/HistoryLimitedTo=100000/g' /home/kali/.config/qterminal.org/qterminal.ini
 echo 'back to the beutiful darkness of a real terminal...'
