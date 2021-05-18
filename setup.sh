@@ -35,6 +35,11 @@ sed -i 's/colorScheme=Kali-Dark/colorScheme=Linux/g' /home/kali/.config/qtermina
 echo 'hush kali devs'
 touch ~/.hushlogin
 
+printf '\n============================================================\n'
+printf '[+] Updating System\n'
+printf '============================================================\n\n'
+apt-get update -y
+apt-get upgrade -y
 
 
 
@@ -129,12 +134,6 @@ echo '[Match]
 name=*
 [Network]
 LLMNR=no' > /etc/systemd/network/90-disable-llmnr.network
-printf '\n============================================================\n'
-printf '[+] Updating System\n'
-printf '============================================================\n\n'
-apt-get update -y
-apt-get upgrade -y
-
 
 printf '\n============================================================\n'
 printf '[+] Installing tools\n'
