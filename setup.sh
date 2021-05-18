@@ -22,6 +22,15 @@ echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\
 echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\e[31;1m\]> \[\e[0m\]"' >> /home/kali/.bashrc
 echo 'downloading tmux conf'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
+echo 'gettin rid of transparency..'
+sed -i 's/ApplicationTransparency=20/ApplicationTransparency=0/g' /home/kali/.config/qterminal.org/qterminal.ini
+echo 'increasing history'
+sed -i 's/HistoryLimitedTo=1000/HistoryLimitedTo=100000/g' /home/kali/.config/qterminal.org/qterminal.ini
+echo 'back to the beutiful darkness of a real terminal...'
+sed -i 's/colorScheme=Kali-Dark/colorScheme=Linux/g' /home/kali/.config/qterminal.org/qterminal.ini
+
+
+
 
 
 printf '\n============================================================\n'
@@ -80,8 +89,9 @@ grep -q 'NORMAL_LOGGING' "$HOME/.zshrc" || echo "$normal_log_script" >> "$HOME/.
 printf '\n============================================================\n'
 printf '[+] Adjusting timezone\n'
 printf '============================================================\n\n'
-ls -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
-dpkg-reconfigure -f noninteractive tzdata
+#ls -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
+#dpkg-reconfigure -f noninteractive tzdata
+timedatectl set-timezone Europe/Stockholm 
 
 printf '\n============================================================\n'
 printf '[+] Lowering volume\n'
