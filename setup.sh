@@ -7,8 +7,10 @@ printf '[+] Setting up host specific details\n'
 printf '============================================================\n\n'
 echo 'setting up hostname'
 echo 'd3Xm' > /etc/hostname
+sed -i 's/kali/d3Xm/g' /etc/hosts
 echo 'changing default shell'
 chsh --shell /bin/bash kali
+chsh --shell /bin/bash root
 echo 'making share directory'
 mkdir /home/kali/shares
 echo 'downloading share script'
@@ -25,8 +27,7 @@ wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
 printf '\n============================================================\n'
 printf '[+] Remove password requirement for sudo commands\n'
 printf '============================================================\n\n'
-sed 's/sudo/boop/g' /etc/sudoers >> /etc/sudoers
-echo '%sudo   ALL=(ALL:ALL) NOPASSWD' >> /etc/sudoers
+sed -i 's/ ALL/ NOPASSWD/g' /etc/sudoers
 
 printf '\n============================================================\n'
 printf '[+] Enabling bash session logging\n'
