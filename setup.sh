@@ -184,15 +184,10 @@ printf '============================================================\n\n'
 go get -v github.com/0bs3ssi0n/Dictator
 ln -s /home/kali/go/bin/Dictator /usr/local/bin/Dictator
 
-
-
 printf '\n============================================================\n'
-printf '[+] Initializing Metasploit Database\n'
+printf '[+] Installing Evil-WinRM\n'
 printf '============================================================\n\n'
-systemctl start postgresql
-systemctl enable postgresql
-msfdb init
-
+gem install evil-winrm
 
 printf '\n============================================================\n'
 printf '[+] Installing EAP Hammer\n'
@@ -231,6 +226,13 @@ wget -q https://github.com/securestate/king-phisher/raw/master/tools/install.sh 
 bash ./install.sh
 
 printf '\n============================================================\n'
+printf '[+] Initializing Metasploit Database\n'
+printf '============================================================\n\n'
+systemctl start postgresql
+systemctl enable postgresql
+msfdb init
+
+printf '\n============================================================\n'
 printf '[+] Installing PCredz\n'
 printf '============================================================\n\n'
 apt-get remove -y python-pypcap
@@ -248,8 +250,6 @@ cd Reconbot
 chmod +x reconbot
 ln -s /opt/Reconbot/reconbot /usr/bin/reconbot
 
-
-
 printf '\n============================================================\n'
 printf '[+] Installing RsaCTFool\n'
 printf '============================================================\n\n'
@@ -260,7 +260,6 @@ cd RsaCtfTool
 pip3 install -r "requirements.txt"
 python3 RsaCtfTool.py
 cd /opt
-
 
 printf '\n============================================================\n'
 printf '[+] Installing Ruler\n'
