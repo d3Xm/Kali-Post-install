@@ -60,4 +60,3 @@ Docker-compose<br />
 To Do:
 ----
 fix bash session logging module<br />
-fix gitrob<br />
