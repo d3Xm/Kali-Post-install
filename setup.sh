@@ -308,7 +308,7 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' | tee /etc/apt/sources.list.d/docker.list
 apt-get update
 apt remove docker docker-engine docker.io
-apt-get install docker-ce docker-ce-cli containerd.io
+apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl enable containerd
