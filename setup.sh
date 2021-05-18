@@ -17,8 +17,12 @@ chsh --shell /bin/bash kali
 chsh --shell /bin/bash root
 echo 'creating share directory'
 mkdir /home/kali/shares
+chmod 774 shares
+chown kali:kali shares
 echo 'downloading share script'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/mount.sh | sh
+chown kali:kali mount.sh
+chmod 774 mount.sh
 echo '/usr/bin/vmhgfs-fuse .host:/ /home/kali/shares -o subtype=vmhgfs-fuse,allow_other' >> /etc/profile
 echo 'PATH=$PATH:/home/kali/shares/virtualshares/sharedbins/' >> /etc/profile
 echo 'setting a PS1 for bash that dosnt make me want to claw my eyes out'
