@@ -278,9 +278,16 @@ ln -s /opt/RsaCtfTool/RsaCtfTool.py /usr/local/bin/
 printf '\n============================================================\n'
 printf '[+] Installing Ruler\n'
 printf '============================================================\n\n'
-go get -v github.com/sensepost/ruler
-go build $HOME/go/src/github.com/sensepost/ruler
-ln -s $HOME/go/src/github.com/sensepost/ruler/ruler /usr/local/bin/ruler
+cd /opt
+mkdir ruler
+chown kali:kali ruler
+cd ruler
+wget https://github.com/sensepost/ruler/releases/download/2.4.1/ruler-linux64
+mv ruler-linux64 ruler
+chown kali:kali ruler
+chmod +x ruler
+ln -s /opt/ruler/ruler /usr/local/bin/
+
 
 printf '\n============================================================\n'
 printf '[+] Installing WPscan\n'
