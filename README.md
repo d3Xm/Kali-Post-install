@@ -8,3 +8,4 @@ The meaning of this is simply to lessen the burden of when a Kali vm gets fucked
 ##
 To Do:
 ----
+fix bash logging module
