@@ -27,7 +27,7 @@ wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
 printf '\n============================================================\n'
 printf '[+] Remove password requirement for sudo commands\n'
 printf '============================================================\n\n'
-sed -i 's/ ALL/ NOPASSWD/g' /etc/sudoers
+sed -i 's/ ALL/ NOPASSWD: ALL/g' /etc/sudoers
 
 printf '\n============================================================\n'
 printf '[+] Enabling bash session logging\n'
