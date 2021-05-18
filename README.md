@@ -40,6 +40,7 @@ Gitrob<br />
 Gobuster<br />
 King-Phisher<br />
 PCredz<br />
+Phishing Templates<br />
 Reconbot<br />
 RsaCTFool<br />
 Ruler<br />
