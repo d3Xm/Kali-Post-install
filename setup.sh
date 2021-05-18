@@ -4,7 +4,7 @@ TIMEZONE='Europe/Stockholm'
 HOME=/home/kali/
 GITHUBTOKEN=  # Add your Github API token here
 
-cd /home/kali
+cd $HOME
 
 printf '\n============================================================\n'
 printf '[+] Setting up host specific details\n'
