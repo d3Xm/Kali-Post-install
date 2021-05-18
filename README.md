@@ -29,6 +29,7 @@ Creates:<br />
 
 Installs:<br />
 Go Lang<br />
+Bloodhound<br />
 CrackMapExec<br />
 Dictator<br />
 EAP Hammer<br />
