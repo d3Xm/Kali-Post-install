@@ -7,6 +7,4 @@ The meaning of this is simply to lessen the burden of when a Kali vm gets fucked
 
 ##
 To Do:
-1. remove transperancy from terminal
-2. set background color to black and not blueish
-3. vastly increase terminal history from 1k chars
+----
