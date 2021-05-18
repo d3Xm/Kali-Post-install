@@ -24,7 +24,9 @@ wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/mount.sh | sh
 chown kali:kali mount.sh
 chmod 774 mount.sh
 sed -i 's/#user_allow_other/user_allow_other/g'  /etc/fuse.conf
-echo '/usr/bin/vmhgfs-fuse .host:/ /home/kali/shares -o subtype=vmhgfs-fuse,allow_other' >> $HOME/.bashrc
+echo 'if [ -z "${TMUX}" ]; then' >> $HOME/.bashrc
+echo '        /usr/bin/vmhgfs-fuse .host:/ /home/kali/shares -o subtype=vmhgfs-fuse,allow_other' >> $HOME/.bashrc
+echo 'fi' >> $HOME/.bashrc 
 echo 'PATH=$PATH:/home/kali/shares/virtualshares/sharedbins/' >> $HOME/.bashrc
 echo 'setting a PS1 for bash that dosnt make me want to claw my eyes out'
 echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\e[31;1m\]> \[\e[0m\]"' >> /root/.bashrc
