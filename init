@@ -2,6 +2,7 @@
 TARGETIP=$1
 TARGETNAME=$2
 TARGET=$TARGETNAME
-sed -i "s/TARGET.*/TARGET=$TARGET/g" /home/kali/.bashrc
+sed -i "s/TARGET=.*/TARGET=$TARGET/g" /home/kali/.bashrc
+sed -i "s/TARGETIP=.*/TARGETIP=$TARGETIP/g" /home/kali/.bashrc
 echo -e "$TARGETIP $TARGETNAME" >> /etc/hosts
 source /home/kali/.bashrc
