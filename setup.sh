@@ -39,7 +39,7 @@ echo 'export FILES_SMALL=/home/kali/shares/virtualshares/sharedbins/SecLists/Dis
 echo 'export BIG=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/big.txt' >> /home/kali/.bashrc
 echo 'export rockyou=/home/kali/shares/virtualshares/sharedbins/rockyou.txt' >> /home/kali/.bashrc
 echo 'export TARGET=boop.htb' >> /home/kali/.bashrc
-echo 'export TARGET=boop.htb' >> /home/kali/.bashrc
+echo 'export TARGETIP=192.1.1.1' >> /home/kali/.bashrc
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/init -O /usr/local/bin/ctf_init
 chown kali:kali /usr/local/bin/ctf_init
 chmod 777 /usr/local/bin/ctf_init
