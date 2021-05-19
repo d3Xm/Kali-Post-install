@@ -39,6 +39,7 @@ echo 'export FILES_LARGE=/home/kali/shares/virtualshares/sharedbins/SecLists/Dis
 echo 'export FILES_SMALL=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/raft-small-files.txt' >> /home/kali/.bashrc
 echo 'export BIG=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/big.txt' >> /home/kali/.bashrc
 echo 'export rockyou=/home/kali/shares/virtualshares/sharedbins/rockyou.txt' >> /home/kali/.bashrc
+echo 'export TARGET=boop.htb' >> /home/kali/.bashrc
 echo 'downloading tmux conf'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
 echo 'gettin rid of transparency..'
