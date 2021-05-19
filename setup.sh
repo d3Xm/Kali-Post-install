@@ -140,10 +140,10 @@ pactl set-sink-volume 0 25%
 printf '\n============================================================\n'
 printf '[+] Disabling Auto-lock, Sleep on AC\n'
 printf '============================================================\n\n'
-xset s off
-xset s noblank
-xset -dpms
-xset dpms 0 0 0
+sudo -H -u kali bash -c "xset s off"
+sudo -H -u kali bash -c "xset s noblank"
+sudo -H -u kali bash -c "xset -dpms"
+sudo -H -u kali bash -c "xset dpms 0 0 0"
 
 printf '\n============================================================\n'
 printf '[+] Disabling LL-MNR\n'
