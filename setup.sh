@@ -32,7 +32,6 @@ echo 'setting a PS1 for bash that dosnt make me want to claw my eyes out'
 echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\e[31;1m\]> \[\e[0m\]"' >> /root/.bashrc
 echo 'PS1="\[\e[31;1m\]\u\[\e[32;1m\]\[\e[37;2m\](\[\e[32;1m\]\w\[\e[37;1m\])\[\e[31;1m\]> \[\e[0m\]"' >> /home/kali/.bashrc
 /home/kali/shares/virtualshares/sharedbins/SecLists
-echo 'alias nmap="grc nmap"' >> /home/kali/.bashrc
 echo 'export DIRS_LARGE=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/raft-large-directories.txt' >> /home/kali/.bashrc
 echo 'export DIRS_SMALL=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/raft-small-directories.txt' >> /home/kali/.bashrc
 echo 'export FILES_LARGE=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/raft-large-files.txt' >> /home/kali/.bashrc
@@ -40,6 +39,16 @@ echo 'export FILES_SMALL=/home/kali/shares/virtualshares/sharedbins/SecLists/Dis
 echo 'export BIG=/home/kali/shares/virtualshares/sharedbins/SecLists/Discovery/Web-Content/big.txt' >> /home/kali/.bashrc
 echo 'export rockyou=/home/kali/shares/virtualshares/sharedbins/rockyou.txt' >> /home/kali/.bashrc
 echo 'export TARGET=boop.htb' >> /home/kali/.bashrc
+echo 'export TARGET=boop.htb' >> /home/kali/.bashrc
+wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/init -O /usr/local/bin/ctf_init
+chown kali:kali /usr/local/bin/ctf_init
+chmod 777 /usr/local/bin/ctf_init
+sudo -H -u kali bash -c "touch .bash_aliases"
+echo 'alias nmap="sudo grc nmap"' >> /home/kali/.bash_aliases
+echo 'alias ctf_init="sudo ctf_init"' >> /home/kali/.bash_aliases
+echo 'alias enum="masscan  -p1-65535,U:1-65535 --rate=500 -e tun0"' >> /home/kali/.bash_aliases
+echo 'alias scan="nmap  -sV -sC -A -Pn -T4"' >> /home/kali/.bash_aliases
+echo 'alias scanudp="nmap -sV -sC -A -Pn -T4 -sU"' >> /home/kali/.bash_aliases
 echo 'downloading tmux conf'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
 echo 'gettin rid of transparency..'
@@ -275,6 +284,7 @@ git clone https://github.com/0bs3ssi0n/Reconbot.git
 cd Reconbot
 chmod +x reconbot
 ln -s /opt/Reconbot/reconbot /usr/bin/reconbot
+alias ctf_recon="sudo reconbot $TARGET"
 
 printf '\n============================================================\n'
 printf '[+] Installing RsaCTFool\n'
