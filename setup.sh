@@ -104,11 +104,12 @@ grep -q 'NORMAL_LOGGING' "$HOME/.bashrc" || echo "$normal_log_script" >> "$HOME/
 grep -q 'NORMAL_LOGGING' "$HOME/.zshrc" || echo "$normal_log_script" >> "$HOME/.zshrc"
 
 printf '\n============================================================\n'
-printf '[+] Adjusting timezone\n'
+printf '[+] Adjusting timezone and locale\n'
 printf '============================================================\n\n'
 #ls -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 #dpkg-reconfigure -f noninteractive tzdata
 timedatectl set-timezone $TIMEZONE
+localectl set-locale en_GB.UTF-8
 
 printf '\n============================================================\n'
 printf '[+] Lowering volume\n'
@@ -121,18 +122,10 @@ pactl set-sink-volume 0 25%
 printf '\n============================================================\n'
 printf '[+] Disabling Auto-lock, Sleep on AC\n'
 printf '============================================================\n\n'
-# disable session idle
-gsettings set org.gnome.desktop.session idle-delay 0
-# disable sleep when on AC power
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
-# disable screen timeout on AC
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/blank-on-ac -s 0 --create --type int
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-on-ac-off -s 0 --create --type int
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-on-ac-sleep -s 0 --create --type int
-# disable sleep when on AC
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-on-ac -s 14 --create --type int
-# hibernate when power is critical
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/critical-power-action -s 2 --create --type int
+xset s off
+xset s noblank
+xset -dpms
+xset dpms 0 0 0
 
 printf '\n============================================================\n'
 printf '[+] Disabling LL-MNR\n'
@@ -311,7 +304,7 @@ printf '     - LibreOffice\n'
 printf '     - Remmina\n'
 printf '     - file explorer SMB capability\n'
 printf '============================================================\n\n'
-apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass
+apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass xclip
 
 
 printf '\n============================================================\n'
