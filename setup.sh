@@ -284,7 +284,7 @@ git clone https://github.com/0bs3ssi0n/Reconbot.git
 cd Reconbot
 chmod +x reconbot
 ln -s /opt/Reconbot/reconbot /usr/bin/reconbot
-alias ctf_recon="sudo reconbot $TARGET"
+alias ctf_recon="sudo reconbot"
 
 printf '\n============================================================\n'
 printf '[+] Installing RsaCTFool\n'
