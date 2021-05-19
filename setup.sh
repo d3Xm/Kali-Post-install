@@ -284,7 +284,7 @@ git clone https://github.com/0bs3ssi0n/Reconbot.git
 cd Reconbot
 chmod +x reconbot
 ln -s /opt/Reconbot/reconbot /usr/bin/reconbot
-alias ctf_recon="sudo reconbot"
+echo 'alias ctf_recon="sudo reconbot""' >> /home/kali/.bash_aliases
 
 printf '\n============================================================\n'
 printf '[+] Installing RsaCTFool\n'
