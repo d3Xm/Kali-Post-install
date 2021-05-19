@@ -49,6 +49,7 @@ chmod 777 /usr/local/bin/ctf_init
 sudo -H -u kali bash -c "touch .bash_aliases"
 echo 'alias nmap="sudo grc nmap"' >> /home/kali/.bash_aliases
 echo 'alias ctf_init="sudo ctf_init"' >> /home/kali/.bash_aliases
+echo 'alias ctf_recon="sudo reconbot"' >> /home/kali/.bash_aliases
 echo 'alias enum="sudo grc masscan  -p1-65535,U:1-65535 --rate=500 -e tun0"' >> /home/kali/.bash_aliases
 echo 'alias scan="sudo grc nmap  -sV -sC -A -Pn -T4"' >> /home/kali/.bash_aliases
 echo 'alias scanudp="sudo grc nmap -sV -sC -A -Pn -T4 -sU"' >> /home/kali/.bash_aliases
@@ -288,7 +289,7 @@ git clone https://github.com/0bs3ssi0n/Reconbot.git
 cd Reconbot
 chmod +x reconbot
 ln -s /opt/Reconbot/reconbot /usr/bin/reconbot
-echo 'alias ctf_recon="sudo reconbot""' >> /home/kali/.bash_aliases
+
 
 printf '\n============================================================\n'
 printf '[+] Installing RsaCTFool\n'
