@@ -11,7 +11,7 @@ printf '[+] Setting up host specific details\n'
 printf '============================================================\n\n'
 echo 'setting up hostname'
 sed -i "s/kali/$HOSTNAME/g" /etc/hostname
-sed -i 's/kali/d3Xm/g' /etc/hosts
+sed -i "s/kali/$HOSTNAME/g" /etc/hosts
 echo 'changing default shell'
 chsh --shell /bin/bash kali
 chsh --shell /bin/bash root
