@@ -131,7 +131,7 @@ printf '============================================================\n\n'
 #ls -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 #dpkg-reconfigure -f noninteractive tzdata
 timedatectl set-timezone $TIMEZONE
-localectl set-locale en_GB.UTF-8
+localectl set-locale LC_TIME=en_GB.UTF-8
 
 printf '\n============================================================\n'
 printf '[+] Lowering volume\n'
