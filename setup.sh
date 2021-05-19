@@ -52,6 +52,7 @@ echo 'alias ctf_init="sudo ctf_init"' >> /home/kali/.bash_aliases
 echo 'alias enum="sudo grc masscan  -p1-65535,U:1-65535 --rate=500 -e tun0"' >> /home/kali/.bash_aliases
 echo 'alias scan="sudo grc nmap  -sV -sC -A -Pn -T4"' >> /home/kali/.bash_aliases
 echo 'alias scanudp="sudo grc nmap -sV -sC -A -Pn -T4 -sU"' >> /home/kali/.bash_aliases
+echo 'alias copy="xclip -in -selection clipboard"' >> /home/kali/.bash_aliases
 echo 'downloading tmux conf'
 wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/.tmux.conf
 echo 'gettin rid of transparency..'
