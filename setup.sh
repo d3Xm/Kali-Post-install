@@ -133,6 +133,7 @@ printf '============================================================\n\n'
 #dpkg-reconfigure -f noninteractive tzdata
 timedatectl set-timezone $TIMEZONE
 localectl set-locale LC_TIME=en_GB.UTF-8
+sed -i 's/%I:%M %p/%H:%M/g' /home/kali/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 printf '\n============================================================\n'
 printf '[+] Lowering volume\n'
