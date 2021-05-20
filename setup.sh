@@ -47,6 +47,7 @@ wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/init -O /usr/
 chown kali:kali /usr/local/bin/ctf_init
 chmod 777 /usr/local/bin/ctf_init
 sudo -H -u kali bash -c "touch .bash_aliases"
+echo 'alias apt-get="sudo apt-get"' >> /home/kali/.bash_aliases
 echo 'alias nmap="sudo grc nmap"' >> /home/kali/.bash_aliases
 echo 'alias ctf_init="sudo ctf_init"' >> /home/kali/.bash_aliases
 echo 'alias ctf_recon="sudo reconbot"' >> /home/kali/.bash_aliases
@@ -332,7 +333,7 @@ printf '     - LibreOffice\n'
 printf '     - Remmina\n'
 printf '     - file explorer SMB capability\n'
 printf '============================================================\n\n'
-apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass xclip grc
+apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass xclip grc exif libimage-exiftool-perl
 
 
 printf '\n============================================================\n'
