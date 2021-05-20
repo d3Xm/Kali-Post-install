@@ -20,7 +20,7 @@ mkdir /home/kali/shares
 chmod 774 shares
 chown kali:kali shares
 echo 'downloading share script'
-wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/mount.sh | sh
+https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/mount.sh | sh
 chown kali:kali mount.sh
 chmod 774 mount.sh
 sed -i 's/#user_allow_other/user_allow_other/g'  /etc/fuse.conf
@@ -133,7 +133,6 @@ printf '============================================================\n\n'
 #dpkg-reconfigure -f noninteractive tzdata
 timedatectl set-timezone $TIMEZONE
 localectl set-locale LC_TIME=en_GB.UTF-8
-sed -i 's/%I:%M %p/%H:%M/g' /home/kali/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 printf '\n============================================================\n'
 printf '[+] Lowering volume\n'
@@ -146,6 +145,8 @@ pactl set-sink-volume 0 25%
 printf '\n============================================================\n'
 printf '[+] Disabling Auto-lock, Sleep on AC\n'
 printf '============================================================\n\n'
+wget https://raw.githubusercontent.com/d3Xm/Kali-Post-install/main/fix-power.sh
+mv fix-power.sh /etc/profile.d/fix-power.sh
 sudo -H -u kali bash -c "xset s off"
 sudo -H -u kali bash -c "xset s noblank"
 sudo -H -u kali bash -c "xset -dpms"
