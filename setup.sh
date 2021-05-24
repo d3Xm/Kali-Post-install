@@ -332,6 +332,10 @@ printf '     - gnome-screenshot\n'
 printf '     - LibreOffice\n'
 printf '     - Remmina\n'
 printf '     - file explorer SMB capability\n'
+printf '     - sshpass\n'
+printf '     - xclip\n'
+printf '     - grc\n'
+printf '     - exif\n'
 printf '============================================================\n\n'
 apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass xclip grc exif libimage-exiftool-perl
 
