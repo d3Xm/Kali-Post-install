@@ -27,6 +27,20 @@ Creates:<br />
 /home/kali/shares  and sets a bashrc script to enable it for vmware shares<br />
 /home/kali/shares/virtualshares/sharedbins in $PATH <br />
 
+Custom Aliases:
+apt-get - "sudo apt-get"<br />
+copy - "xclip -in -selection clipboard"<br />
+ctf_init - "sudo ctf_init"<br />
+ctf_recon - "sudo ctf_recon"<br />
+enum - "sudo grc masscan  -p1-65535,U:1-65535 --rate=500 -e tun0"<br />
+nmap - "sudo grc nmap"<br />
+scan - "sudo grc nmap  -sV -sC -A -Pn -T4"<br />
+scanudp - "sudo grc nmap -sV -sC -A -Pn -T4 -sU"<br />
+
+Custom scripts:
+ctf_init - arg1 ip arg2 dns-name , sets variable $TARGET, $TARGETIP and set ip/name in /etc/hosts
+ctf_recon - runs reconbot
+
 Installs:<br />
 Go Lang<br />
 Bloodhound<br />
