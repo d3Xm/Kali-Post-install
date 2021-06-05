@@ -338,7 +338,7 @@ printf '     - grc\n'
 printf '     - exif\n'
 printf '============================================================\n\n'
 apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass xclip grc exif libimage-exiftool-perl
-
+pip3 install flask-unsign
 
 printf '\n============================================================\n'
 printf '[+] Increase open file limit\n'
