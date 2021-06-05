@@ -339,6 +339,7 @@ printf '     - exif\n'
 printf '============================================================\n\n'
 apt-get install -y gnome-screenshot libreoffice remmina gvfs-backends sshpass xclip grc exif libimage-exiftool-perl
 pip3 install flask-unsign
+export PATH=$PATH:/home/kali/.local/bin
 
 printf '\n============================================================\n'
 printf '[+] Increase open file limit\n'
